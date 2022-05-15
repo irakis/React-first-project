@@ -1,7 +1,7 @@
 import styles from './List.module.scss';
 import Column from '../Column/Column.js';
 import {useEffect, useState} from 'react';
-
+import shortid from 'shortid';
 
 const List = () => {
     const [columns, setColumns] = useState([
@@ -10,17 +10,12 @@ const List = () => {
         {id: 3,title: 'Games', icon: 'gamepad'},
     ]);
 
-    useEffect(()=> {
-        setTimeout(() => {
-            setColumns([...columns, {id: 4, title: 'Test column'}]);
-        }, 2000);
-    }, []);
-
     const handleSubmit = e => {
         e.preventDefault();
-        //setColumns([...columns, {id: ?? , title:??,}]);
+        setColumns([...columns, {id: shortid() , title:value}]);
+        setValue('');
     }
-    const [value, setValue] =useState('aaa');
+    const [value, setValue] =useState('');
 
     return (
         <div>
@@ -34,7 +29,7 @@ const List = () => {
                 
             </section>
             <form onSubmit={handleSubmit}>
-                <input type="text"></input>
+                <input type="text" value={value} onChange={ e=>setValue(e.target.value)} />
                 <button>Add column</button>
             </form>
         </div>
