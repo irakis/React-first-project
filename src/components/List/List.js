@@ -1,6 +1,6 @@
 import styles from './List.module.scss';
 import Column from '../Column/Column.js';
-import {useState} from 'react';
+import { useState } from 'react';
 import shortid from 'shortid';
 import ColumnForm from '../ColumnForm/ColumnForm';
 
@@ -35,19 +35,19 @@ const List = () => {
         }
     ]);
 
-const addColumn = newColumn => {
-    setColumns([...columns, { id: shortid(), title: newColumn.title, icon: newColumn.icon, cards: [] }]);
-}
+    const addColumn = newColumn => {
+        setColumns([...columns, { id: shortid(), title: newColumn.title, icon: newColumn.icon, cards: [] }]);
+    }
 
-const addCard = (newCard, columnId) => {
-	const columnsUpdated = columns.map(column => {
-		if(column.id === columnId)
-			return { ...column, cards: [...column.cards, { id: shortid(), title: newCard.title }]}
-		else
-			return column
-	})
-	setColumns(columnsUpdated);
-};
+    const addCard = (newCard, columnId) => {
+        const columnsUpdated = columns.map(column => {
+            if (column.id === columnId)
+                return { ...column, cards: [...column.cards, { id: shortid(), title: newCard.title }] }
+            else
+                return column
+        })
+        setColumns(columnsUpdated);
+    };
 
     return (
         <div>
@@ -56,10 +56,9 @@ const addCard = (newCard, columnId) => {
             </header>
             <p className={styles.description}>Interesting things I want to check out</p>
             <section className={styles.columns}>
-                {columns.map(column => <Column  key={column.id} id={column.id} title={column.title} icon={column.icon} cards={column.cards} />)}
+                {columns.map(column => <Column key={column.id} columnId={column.id} title={column.title} icon={column.icon} action={addCard} cards={column.cards} />)}
             </section>
             <ColumnForm action={addColumn} />
-            <Column props={addCard}/>
         </div>
     );
 };
