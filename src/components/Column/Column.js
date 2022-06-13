@@ -7,7 +7,6 @@ const Column = props => {
 
     const cards = useSelector(state => state.cards.filter(card =>card.columnId === props.id) );
     const columns = useSelector(state => state.columns );
-    console.log(props);
     
     return (
         <article className={styles.column}>
@@ -15,7 +14,7 @@ const Column = props => {
             <ul className={styles.cards}>
                 {cards.map(card => <Card key={card.id} title={card.title} />)}
             </ul>
-            <CardForm columnId={cards.columnId} />
+            <CardForm columnId={props.id} />
         </article>
     );
 };
