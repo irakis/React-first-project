@@ -1,8 +1,13 @@
 import { createStore } from 'redux';
 import initialState from './InitialState';
-const reducer = (state, action) => {
-  return state;
-};
+
+const reducer = (state, payload) => {
+  switch(payload.type) {
+    case 'ADD_COLUMN' :
+      return {...state, columns: [...state.columns, {...payload.newColumn }]}
+    default: 
+      return state;
+}};
 
 const store = createStore(
   reducer,
