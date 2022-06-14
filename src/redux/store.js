@@ -2,11 +2,15 @@ import { createStore } from 'redux';
 import initialState from './InitialState';
 
 const reducer = (state, payload) => {
+  console.log(state);
+  console.log('jaki jest payload?: ',payload);
   switch(payload.type) {
     case 'ADD_COLUMN' :
       return {...state, columns: [...state.columns, {...payload.newColumn }]}
     case 'ADD_CARD' :
       return {...state, cards: [...state.cards, {...payload.newCard}]}
+    case 'UPDATE_SEARCHSTRING':
+      return {...state, searchString: payload.newSearch}
     default: 
       return state;
 }};
