@@ -10,7 +10,11 @@ export const getAllColumns = state =>{
   return state.columns
 };
 
-console.log(getAllColumns);
+// action creators
+export const addColumn = newColumn => ({ type: 'ADD_COLUMN', newColumn });
+export const addCard = newCard => ({ type: 'ADD_CARD', newCard });
+export const updateSearching = newSearch => ({ type: 'UPDATE_SEARCHING', newSearch})
+
 
 
 function reducer(state, payload) {
