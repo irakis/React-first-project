@@ -7,9 +7,9 @@ const NavBar = () => {
             <div className={styles.container}>
                 <i className='fa fa-tasks'></i>
                 <ul>
-                    <li className={styles.li}><a href='#/'>Home</a></li>
-                    <li><a href='#/favorite'>Favorite</a></li>
-                    <li><a href='#/About'>About</a></li>
+                    <li className={styles.li}><a href='/'>Home</a></li>
+                    <li><a href='/favorite'>Favorite</a></li>
+                    <li><a href='/about'>About</a></li>
                 </ul>
             </div>
         </nav>

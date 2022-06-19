@@ -13,8 +13,7 @@ export const getAllColumns = state =>{
 // action creators
 export const addColumn = newColumn => ({ type: 'ADD_COLUMN', newColumn });
 export const addCard = newCard => ({ type: 'ADD_CARD', newCard });
-export const updateSearching = newSearch => ({ type: 'UPDATE_SEARCHING', newSearch})
-
+export const updateSearching = newSearch => ({ type: 'UPDATE_SEARCHSTRING', newSearch})
 
 
 function reducer(state, payload) {
