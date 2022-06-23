@@ -10,7 +10,7 @@ const List = () => {
     
     const listData = useSelector(state => getListById(state, listId));
     const columns = useSelector(state => getColumnsById(state, listId));
-    console.log('listId: ',listId);
+    console.log('listData: ',listData);
 
     return (
         <div>

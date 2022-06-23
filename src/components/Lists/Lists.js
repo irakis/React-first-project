@@ -6,7 +6,7 @@ import { useParams } from 'react-router';
 
 const Lists = () => {
   const { listId } = useParams();
-  console.log('listId: ', listId)
+  console.log('listId: ', listId);
 
   const lists = useSelector(getAllLists);
 
