@@ -4,13 +4,13 @@ import ColumnForm from '../ColumnForm/ColumnForm';
 import { getColumnsById, getListById } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import SearchForm from "../SearchForm/SearchForm";
 
 const List = () => {
     const { listId } = useParams();
-    
+
     const listData = useSelector(state => getListById(state, listId));
     const columns = useSelector(state => getColumnsById(state, listId));
-    console.log('listData: ',listData);
 
     return (
         <div>
@@ -18,10 +18,11 @@ const List = () => {
                 <h2 className={styles.title}>{listData.title}<span className={styles.span}>soon!</span></h2>
             </header>
             <p className={styles.description}>{listData.description}</p>
+            <SearchForm />
             <section className={styles.columns}>
                 {columns.map(column => <Column key={column.id} {...column} />)}
             </section>
-            <ColumnForm />
+            <ColumnForm listId={listId} />
         </div>
     );
 };
