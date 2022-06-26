@@ -17,12 +17,14 @@ export const getColumnsById = ({ columns }, listId) => {
 export const getAllLists = (state) => {
   return state.lists
 };
+
 // action creators
 export const addColumn = newColumn => ({ type: 'ADD_COLUMN', newColumn });
 export const addCard = newCard => ({ type: 'ADD_CARD', newCard });
 export const updateSearching = newSearch => ({ type: 'UPDATE_SEARCHSTRING', newSearch })
 export const addList = newList => ({ type: 'ADD_LIST', newList });
-
+export const toggleFavorite = favoriteCard => ({ type:'TOGGLE_CARD_FAVORITE' , favoriteCard });
+ 
 
 
 function reducer(state, payload) {
@@ -37,6 +39,8 @@ function reducer(state, payload) {
       return { ...state, searchString: payload.newSearch };
     case 'ADD_LIST':
       return { ...state, lists: [...state.lists, { ...payload.newList }] };
+    case 'TOGGLE_CARD_FAVORITE':
+      return { ...state, cards: state.cards.map(card => (card.id === payload.favoriteCard) ? { ...card, isFavorite: !card.isFavorite } : card) };
       default:
       return state;
   }
