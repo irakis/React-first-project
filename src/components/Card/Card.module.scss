@@ -15,4 +15,7 @@
 
 .card ul {
     display: block;
+    &span .isActive {
+        color: red;
+    }
 }

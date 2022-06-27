@@ -6,13 +6,22 @@ import { useSelector } from 'react-redux';
 const Favorite = () => {
 
     const favoriteCards = useSelector((state) => state.cards.filter(card => card.isFavorite === true));
-    console.log(favoriteCards);
+    console.log(favoriteCards.length);
+    if (favoriteCards.length == 0)
         return (
+            <div>
+                <PageTitle title={'Favorite'} />
+                <article className={styles.empty}>
+                    <p className={styles.text} >No cards...</p>
+                </article>
+            </div>
+        )
+    return (
         <div>
             <PageTitle title={'Favorite'} />
             <article className={styles.column}>
                 <ul className={styles.cards}>
-                    {favoriteCards.map(card => <Card key={card.id} title={card.title} id={card.id} />)}
+                    {favoriteCards.map(card => <Card key={card.id} title={card.title} id={card.id} isFavorite={card.isFavorite} />)}
                 </ul>
             </article>
         </div>

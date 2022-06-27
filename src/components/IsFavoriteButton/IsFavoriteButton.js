@@ -1,13 +1,13 @@
 import styles from '../IsFavoriteButton/IsFavoriteButton.module.scss';
 import clsx from 'clsx';
 
-
 const IsFavoriteButton = (props) => {
-        console.log(props.isFavorite.favorite);
+
+        console.log(props);
         
         return (
                 <button className={styles.isFavoriteButton}>
-                        <span className={clsx("fa fa-star-o", props.isFavorite.favorite===true ? styles.isActive: null)} />
+                        <span className={clsx("fa fa-star-o", props.isFavorite === true ? styles.isActive: styles.inActive)} />
                 </button>
         );
 };

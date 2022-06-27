@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../redux/store';
 
 const Card = props => {
+    console.log(props);
     
     const dispatch = useDispatch();
     const handleClick = e => {
@@ -11,12 +12,11 @@ const Card = props => {
         const favoriteCard = props.id
         dispatch(toggleFavorite(favoriteCard));
     }
-    console.log(props);
 
     return (
         <>
             <li className={styles.card} onClick={handleClick}>{props.title} 
-                <IsFavoriteButton isFavorite={props}/>
+                <IsFavoriteButton isFavorite={props.favorite}/>
             </li>
         </>
 

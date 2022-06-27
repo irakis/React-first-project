@@ -13,10 +13,6 @@
     transition: $transition;
     border-color: none;
 
-    span.isActive {
-        color: $color-warning;
-    }
-
     &.transparent {
         background: transparent;
 
@@ -24,5 +20,11 @@
             color: darken($color-light, 20%);
         }
     }
+}
+.isActive {
+    color: $color-warning;
+}
+.inActive {
+    color:black;
 }
 

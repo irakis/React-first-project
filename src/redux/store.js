@@ -28,8 +28,7 @@ export const toggleFavorite = favoriteCard => ({ type:'TOGGLE_CARD_FAVORITE' , f
 
 
 function reducer(state, payload) {
-  console.log('what is payload', payload);
-
+  
   switch (payload.type) {
     case 'ADD_COLUMN':
       return { ...state, columns: [...state.columns, { ...payload.newColumn }] };
