@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../redux/store';
 
 const Card = props => {
-    console.log(props);
     
     const dispatch = useDispatch();
     const handleClick = e => {
