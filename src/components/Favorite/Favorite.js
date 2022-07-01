@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 const Favorite = () => {
 
     const favoriteCards = useSelector((state) => state.cards.filter(card => card.isFavorite === true));
-    console.log(favoriteCards.length);
     if (favoriteCards.length == 0)
         return (
             <div>
