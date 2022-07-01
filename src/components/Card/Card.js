@@ -1,11 +1,9 @@
 import styles from '../Card/Card.module.scss';
 import IsFavoriteButton from '../IsFavoriteButton/IsFavoriteButton';
 import { useDispatch } from 'react-redux';
-import { toggleFavorite } from '../../redux/store';
+import { toggleFavorite } from '../../redux/cardsReducer';
 
 const Card = props => {
-    console.log('props w card: ',props);
-    console.log('isFavorite', props.isFavorite);
     
     const dispatch = useDispatch();
     const handleClick = e => {

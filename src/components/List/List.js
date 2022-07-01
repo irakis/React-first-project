@@ -1,7 +1,8 @@
 import styles from './List.module.scss';
 import Column from '../Column/Column.js';
 import ColumnForm from '../ColumnForm/ColumnForm';
-import { getColumnsById, getListById } from '../../redux/store';
+import { getListById } from '../../redux/listsReducer';
+import { getColumnsById } from '../../redux/columnsReducer';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import SearchForm from "../SearchForm/SearchForm";
