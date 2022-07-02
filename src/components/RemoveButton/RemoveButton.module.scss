@@ -1,7 +1,6 @@
-@use "sass:math";
 @import '../../styles/settings.scss';
 
-.isFavoriteButton {
+.removeButton {
     background: none;
     border: 0;
     line-height: 1.3;
@@ -10,7 +9,6 @@
     border-radius: $radius;
     cursor: pointer;
     transition: $transition;
-    margin: 0 15px 0 auto;
 
     &.transparent {
         background: transparent;
@@ -20,10 +18,3 @@
         }
     }
 }
-.isActive {
-    color: $color-warning;
-}
-.inActive {
-    color:black;
-}
-
